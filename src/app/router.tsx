@@ -1,19 +1,19 @@
-import { Navigate, createBrowserRouter } from 'react-router-dom'
-import ProtectedRoute from '../features/auth/components/ProtectedRoute'
-import LoginPage from '../features/auth/pages/LoginPage'
-import DashboardPage from '../features/dashboard/pages/DashboardPage'
+import { Navigate, createBrowserRouter } from "react-router-dom";
+import ProtectedRoute from "../features/auth/components/ProtectedRoute";
+import LoginPage from "../features/auth/pages/LoginPage";
+import DashboardPage from "../features/dashboard/pages/DashboardPage";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Navigate to="/dashboard" replace />,
   },
   {
-    path: '/login',
+    path: "/login",
     element: <LoginPage />,
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: (
       <ProtectedRoute>
         <DashboardPage />
@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: '*',
+    path: "*",
     element: <Navigate to="/dashboard" replace />,
   },
-])
+]);

@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { authStore } from '../../../app/store'
-import Button from '../../../shared/components/Button'
-import CustomersPage from '../../users/pages/CustomersPage'
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { authStore } from "../../../app/store";
+import Button from "../../../shared/components/Button";
+import CustomersPage from "../../users/pages/CustomersPage";
 
 function DashboardPage() {
-  const navigate = useNavigate()
-  const [page, setPage] = useState(1)
+  const navigate = useNavigate();
+  const [page, setPage] = useState(1);
 
   function handleLogout() {
-    authStore.clearToken()
-    navigate('/login', { replace: true })
+    authStore.clearToken();
+    navigate("/login", { replace: true });
   }
 
   return (
@@ -25,7 +25,7 @@ function DashboardPage() {
         onNextPage={() => setPage((prev) => prev + 1)}
       />
     </main>
-  )
+  );
 }
 
-export default DashboardPage
+export default DashboardPage;
